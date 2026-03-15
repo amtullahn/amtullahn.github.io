@@ -1,4 +1,5 @@
-import { Github, Linkedin, Music, BookOpen, MapPin, Download } from "lucide-react";
+import { MapPin, Download } from "lucide-react";
+import { SOCIAL_LINKS } from "../data/socialLinks";
 
 /* ── Palette ── */
 const FOREST = "#173A2B";
@@ -15,12 +16,8 @@ const SKILLS = [
   { category: "Currently Exploring", items: ["Three.js", "Accessibility (WCAG)", "Design Systems"] },
 ];
 
-const SOCIAL_LINKS = [
-  { icon: <Github size={16} strokeWidth={1.8} />,   label: "GitHub",    href: "https://github.com/amtullahnaalwala" },
-  { icon: <Linkedin size={16} strokeWidth={1.8} />, label: "LinkedIn",  href: "https://linkedin.com/in/amtullahnaalwala" },
-  { icon: <BookOpen size={16} strokeWidth={1.8} />, label: "Goodreads", href: "https://goodreads.com" },
-  { icon: <Music size={16} strokeWidth={1.8} />,    label: "Spotify",   href: "https://spotify.com" },
-];
+import meImage from "../assets/me.png";
+
 
 export function AboutSection() {
   return (
@@ -52,21 +49,14 @@ export function AboutSection() {
 
           {/* Left — identity */}
           <div className="lg:col-span-2 flex flex-col gap-7">
-            {/* Photo placeholder */}
+            {/* Photo (imported from assets/me.png) */}
             <div style={{ position: "relative", alignSelf: "flex-start" }}>
-              <div style={{ width: "200px", height: "200px", borderRadius: "16px",
-                backgroundColor: TAN, display: "flex", alignItems: "center",
-                justifyContent: "center", overflow: "hidden",
-                border: `1px solid rgba(23,58,43,0.12)`,
-                boxShadow: `4px 4px 0 ${CARAMEL}55` }}>
-                <div style={{ textAlign: "center" }}>
-                  <span style={{ fontFamily: "'Fraunces', serif", fontSize: "2.6rem",
-                    color: FOREST, fontWeight: "600", opacity: 0.4, display: "block" }}>AN</span>
-                  <span style={{ fontSize: "0.6rem", color: FOREST, opacity: 0.35,
-                    letterSpacing: "0.08em", fontWeight: "700", textTransform: "uppercase" }}>
-                    photo coming soon
-                  </span>
-                </div>
+              <div style={{ width: "250px", height: "250px" }}>
+                <img
+                  src={meImage}
+                  alt="Amtullah Naalwala"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
               </div>
             </div>
 

@@ -1,4 +1,5 @@
-import { Github, Linkedin, Music, BookOpen, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
+import { SOCIAL_LINKS } from "../data/socialLinks";
 
 const FOREST  = "#173A2B";
 const TERRA   = "#CB6B4D";
@@ -15,13 +16,6 @@ const NAV = [
   { label: "Blog",     action: () => window.open("https://substack.com/@braindumpdigest", "_blank") },
   { label: "Projects", action: () => scrollTo("projects") },
   { label: "Flipbook", action: () => scrollTo("flipbook") },
-];
-
-const SOCIALS = [
-  { icon: <Github size={17} strokeWidth={1.8}/>,   href: "https://github.com/amtullahnaalwala",         label: "GitHub" },
-  { icon: <Linkedin size={17} strokeWidth={1.8}/>, href: "https://linkedin.com/in/amtullahnaalwala",    label: "LinkedIn" },
-  { icon: <BookOpen size={17} strokeWidth={1.8}/>, href: "https://goodreads.com",                       label: "Goodreads" },
-  { icon: <Music size={17} strokeWidth={1.8}/>,    href: "https://spotify.com",                         label: "Spotify" },
 ];
 
 export function Footer() {
@@ -73,7 +67,7 @@ export function Footer() {
               Connect
             </p>
             <div className="flex gap-4 flex-wrap mb-5">
-              {SOCIALS.map(s => (
+              {SOCIAL_LINKS.map(s => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                    aria-label={s.label}
                    className="transition-opacity hover:opacity-40"

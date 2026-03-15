@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Music, BookOpen, Download } from "lucide-react";
-
-const SOCIAL_LINKS = [
-  { icon: <Github size={16} strokeWidth={1.8} />, href: "https://github.com/amtullahnaalwala", label: "GitHub" },
-  { icon: <Linkedin size={16} strokeWidth={1.8} />, href: "https://linkedin.com/in/amtullahnaalwala", label: "LinkedIn" },
-  { icon: <BookOpen size={16} strokeWidth={1.8} />, href: "https://goodreads.com", label: "Goodreads" },
-  { icon: <Music size={16} strokeWidth={1.8} />, href: "https://spotify.com", label: "Spotify" },
-];
+import { Download } from "lucide-react";
+import { SOCIAL_LINKS } from "../data/socialLinks";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

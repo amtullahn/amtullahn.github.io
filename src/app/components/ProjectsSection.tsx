@@ -14,28 +14,28 @@ const CARAMEL = "#BB885E";
 */
 const PROJECTS = [
   {
-    id: 1, number: "01", name: "Project Alpha", status: "Live",
-    description: "A full-stack web application with real-time collaboration features, built with a focus on performance, accessibility, and component-driven architecture.",
-    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "WebSockets"],
-    github: "#", demo: "#", accentColor: FOREST,
+    id: 1, number: "01", name: "Personal Portfolio (amtullahn.github.io)", status: "Live",
+    description: "My personal portfolio website showcasing responsive UI, project case studies, and professional brand, built with React + TypeScript + Vite.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/amtullahn/amtullahn.github.io", demo: "https://amtullahn.github.io", accentColor: FOREST,
   },
   {
-    id: 2, number: "02", name: "Project Beta", status: "Live",
-    description: "A mobile-responsive data visualization dashboard that transforms complex datasets into clear, intuitive charts designed for non-technical stakeholders.",
-    tech: ["Next.js", "D3.js", "Tailwind CSS", "Prisma", "Vercel"],
-    github: "#", demo: "#", accentColor: TERRA,
+    id: 2, number: "02", name: "proxy-web-server", status: "Open Source",
+    description: "A high-performance proxy web server implementation with request routing and configurable upstream host handling, written as a systems-level project.",
+    tech: ["C++", "POSIX Sockets", "HTTP", "Makefile", "Linux"],
+    github: "https://github.com/amtullahn/proxy-web-server", demo: "#", accentColor: TERRA,
   },
   {
-    id: 3, number: "03", name: "Project Gamma", status: "Open Source",
-    description: "An open-source UI component library built with accessibility-first principles — 40+ composable components with full TypeScript support and Storybook docs.",
-    tech: ["React", "Storybook", "Radix UI", "Vitest", "npm"],
-    github: "#", demo: "#", accentColor: SAGE,
+    id: 3, number: "03", name: "server-client-system", status: "Completed",
+    description: "Client-server text file transfer system including reliability checks and chunked data delivery, designed for network programming coursework.",
+    tech: ["C", "TCP/IP", "Socket Programming", "Threading", "Unit Tests"],
+    github: "https://github.com/amtullahn/server-client-system", demo: "#", accentColor: SAGE,
   },
   {
-    id: 4, number: "04", name: "Project Delta", status: "In Progress",
-    description: "A browser extension that enhances reading experiences across the web with custom fonts, color themes, focus mode, and reading-time estimation.",
-    tech: ["Vanilla JS", "Chrome Extension API", "CSS", "Webpack"],
-    github: "#", demo: "#", accentColor: CARAMEL,
+    id: 4, number: "04", name: "Spell-Checker", status: "Academic",
+    description: "Advanced spell-check utility that detects swaps, missing/extra letters, and common typos, with correction suggestions and dictionary-based scoring.",
+    tech: ["C++", "Algorithms", "Data Structures", "File I/O", "CLI"],
+    github: "https://github.com/amtullahn/Spell-Checker", demo: "#", accentColor: CARAMEL,
   },
 ];
 
@@ -45,27 +45,27 @@ const PROJECTS = [
 */
 const EXPERIENCE = [
   {
-    role: "Software Engineer — Front End",
-    company: "Company Name",          // ← update from LinkedIn
-    period: "2023 — Present",          // ← update
+    role: "Software Engineer — Front-End",
+    company: "Independent / Open Source Contributor",
+    period: "2022 — Present",
     location: "Remote",
     bullets: [
-      "Build and maintain product UI across multiple surfaces using React and TypeScript.",
-      "Collaborate with design to establish a component library and shared design system.",
-      "Champion accessibility standards (WCAG 2.1 AA) across all front-end surfaces.",
-      "Drive front-end performance improvements, reducing initial load time measurably.",
+      "Design and ship full-stack portfolio and systems projects using React, TypeScript, Node.js and C/C++.",
+      "Lead front-end architecture and UX delivery for personal brand site, with a focus on accessibility and responsive performance.",
+      "Maintain multiple public repositories including proxy-web-server, server-client-system, and Spell-Checker.",
+      "Collaborate with open-source and academic peers to implement best practices in code quality, testing and CI workflows.",
     ],
     accent: FOREST,
   },
   {
-    role: "Software Engineer",
-    company: "Previous Company",       // ← update from LinkedIn
-    period: "2021 — 2023",             // ← update
+    role: "Software Developer (Academic Projects)",
+    company: "University / Personal Research",
+    period: "2019 — 2022",
     location: "Hybrid",
     bullets: [
-      "Rebuilt legacy product dashboard with React, significantly improving load performance.",
-      "Developed reusable component patterns adopted across 3 internal products.",
-      "Contributed to hiring and technical interviewing for front-end engineering roles.",
+      "Built C++ systems for data processing, company roster sorting, and algorithmic optimization (Alphabetizer, statistical-reports).",
+      "Executed project requirements from concept through implementation, including an animation experience prototype and interactive aquarium simulation.",
+      "Developed and tested software with strong focus on correctness, maintainability and documentation.",
     ],
     accent: SAGE,
   },
