@@ -1,26 +1,11 @@
-# Amtullah's Personal Website
 
-A React + TypeScript portfolio site built with Vite.
+  # Personal Website Design
 
-## Sections
-- Clean, gallery-style **Virtual Living Room** hero with icon frames
-- About Me section
-- Planned Substack posts preview
-- Technical projects gallery with GitHub + live demo links
-- Heyzine flipbook embed section
-- Dedicated `/blog` page for post planning and future archive
+  This is a code bundle for Personal Website Design. The original project is available at https://www.figma.com/design/NHagtKIF6CwtC06fPN1bgc/Personal-Website-Design.
 
-## Design direction
-- Refined around a green + cream palette for a cleaner, calmer look
-- Serif + sans-serif typography pairing (Fraunces + Inter)
-- Icons powered by `react-icons`
+  ## Running the code
 
-## Run locally
-```bash
-npm install
-npm run dev
-```
+  Run `npm i` to install the dependencies.
 
-## Notes
-- Replace placeholder project links with your actual GitHub and live demo URLs.
-- Replace the Heyzine iframe `src` in `src/App.tsx` with your published flipbook link.
+  Run `npm run dev` to start the development server.
+  
