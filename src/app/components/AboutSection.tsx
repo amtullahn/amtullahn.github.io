@@ -11,9 +11,9 @@ const CARAMEL = "#BB885E";
 
 const SKILLS = [
   { category: "Languages",        items: ["JavaScript", "TypeScript", "HTML/CSS", "Python"] },
-  { category: "Frameworks",       items: ["React", "Next.js", "Vue.js", "Node.js"] },
-  { category: "Tooling & Design", items: ["Figma", "Git", "Tailwind CSS", "Storybook", "Webpack"] },
-  { category: "Currently Exploring", items: ["Three.js", "Accessibility (WCAG)", "Design Systems"] },
+  { category: "Frameworks",       items: ["React",, "Node.js"] },
+  { category: "Tooling & Design", items: ["Figma", "Git", "Tailwind CSS", "Webpack"] },
+  { category: "Currently Exploring", items: ["WebGL", "Accessibility (WCAG)", "Design Systems"] },
 ];
 
 import meImage from "../assets/me.png";
@@ -116,16 +116,17 @@ export function AboutSection() {
                   Below is a placeholder based on your profile.
                 */}
                 <p style={{ marginBottom: "14px" }}>
-                  I'm a software engineer with a focus on front-end development, passionate about
-                  building polished, accessible, and user-centered web experiences. I care deeply
-                  about the craft — from design systems and component architecture to the small
-                  details that make interfaces feel effortless.
+                 I’m a software engineer who enjoys building thoughtful, well-designed digital experiences, mostly with React and TypeScript.
                 </p>
+                <p style={{ marginBottom: "14px" }}>
+                  I’m especially drawn to problems that sit at the intersection of technology and people. That shows up in my work building customer-facing platforms, improving developer workflows, and mentoring newer engineers. I’m happiest when I’m learning something new and helping someone else do the same.
+
+                </p>
+                <p style={{ marginBottom: "14px" }}>Outside of work, I’m usually following my curiosity! I like compiling travel videos from new places I’m exploring, hosting gatherings for friends, or turning random ideas into content and side projects (some of which end up in my quarterly updates here). When I’m not building something, I’m probably reading a good book, listening to a podcast, or curating a playlist for whatever mood or life situationI happen to be in!</p>
+                <p style={{ marginBottom: "14px" }}>Lately I’ve been especially curious about startups, internet storytelling, and building things that are both useful and a little delightful.</p>
                 <p>
-                  Outside of code, I write on Substack, read voraciously, and tend to an ever-growing
-                  collection of houseplants. I believe the best products are built at the intersection
-                  of technical rigor and genuine empathy for the people using them.
-                </p>
+If you’re here to collaborate, talk tech, swap book/podcast recs, or just see what I’m up to, welcome!
+</p>
               </div>
             </div>
 

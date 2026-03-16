@@ -17,6 +17,8 @@ const P = {
   leafDk:  "#365E22",
 };
 
+import sofaImage from "../assets/sofa.png";
+
 const scrollTo = (id: string) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -145,76 +147,7 @@ function BookshelfSVG() {
   );
 }
 
-/* ── Sage mid-century sofa ─────────────────────────────── */
-function CouchSVG() {
-  const f  = "#5A7969";   // fabric = sage
-  const fd = "#3F5C4D";   // dark fabric
-  const fm = "#4D6B5A";   // mid fabric
-  const fh = "#6D8F7A";   // highlight
-  const leg = "#7A5035";
-  const legDk = "#5A3420";
 
-  return (
-    <svg viewBox="0 0 620 205" fill="none" xmlns="http://www.w3.org/2000/svg"
-         style={{ width: "100%", display: "block" }}>
-      <ellipse cx="310" cy="200" rx="272" ry="7" fill="rgba(23,58,43,0.12)"/>
-
-      {/* Legs */}
-      <path d="M72,176 L63,198 L78,198 Z" fill={legDk}/>
-      <rect x="65" y="176" width="14" height="13" rx="2" fill={leg}/>
-      <path d="M198,178 L190,196 L204,196 Z" fill={legDk}/>
-      <rect x="192" y="178" width="13" height="10" rx="2" fill={leg}/>
-      <path d="M410,178 L402,196 L416,196 Z" fill={legDk}/>
-      <rect x="403" y="178" width="13" height="10" rx="2" fill={leg}/>
-      <path d="M536,176 L528,198 L543,198 Z" fill={legDk}/>
-      <rect x="529" y="176" width="14" height="13" rx="2" fill={leg}/>
-
-      {/* Seat platform */}
-      <rect x="42" y="148" width="536" height="34" rx="13" fill={fd}/>
-      {/* Seat cushions */}
-      <rect x="48" y="151" width="254" height="27" rx="9" fill={f}/>
-      <rect x="48" y="151" width="254" height="6" rx="4" fill={fh} opacity="0.3"/>
-      <rect x="308" y="151" width="262" height="27" rx="9" fill={fm}/>
-      <rect x="308" y="151" width="262" height="6" rx="4" fill={fh} opacity="0.25"/>
-
-      {/* Back frame */}
-      <rect x="42" y="18" width="536" height="136" rx="20" fill={fd}/>
-
-      {/* Back cushions (3) */}
-      <rect x="50" y="24" width="163" height="120" rx="15" fill={f}/>
-      <rect x="50" y="24" width="163" height="16" rx="7" fill={fh} opacity="0.28"/>
-      <rect x="223" y="24" width="174" height="120" rx="15" fill={fm}/>
-      <rect x="223" y="24" width="174" height="16" rx="7" fill={fh} opacity="0.22"/>
-      <rect x="407" y="24" width="163" height="120" rx="15" fill={f}/>
-      <rect x="407" y="24" width="163" height="16" rx="7" fill={fh} opacity="0.28"/>
-      {/* Cushion dividers */}
-      <rect x="215" y="22" width="10" height="124" rx="5" fill={fd} opacity="0.55"/>
-      <rect x="399" y="22" width="10" height="124" rx="5" fill={fd} opacity="0.55"/>
-
-      {/* Arms */}
-      <rect x="0" y="46" width="46" height="136" rx="15" fill={fd}/>
-      <rect x="-4" y="34" width="54" height="20" rx="10" fill={f}/>
-      <rect x="-4" y="34" width="54" height="8" rx="5" fill={fh} opacity="0.3"/>
-      <rect x="574" y="46" width="46" height="136" rx="15" fill={fd}/>
-      <rect x="570" y="34" width="54" height="20" rx="10" fill={f}/>
-      <rect x="570" y="34" width="54" height="8" rx="5" fill={fh} opacity="0.3"/>
-
-      {/* Terracotta throw pillow */}
-      <g transform="rotate(11,525,85)">
-        <rect x="500" y="52" width="52" height="66" rx="11" fill="#CB6B4D"/>
-        <line x1="526" y1="54" x2="526" y2="116" stroke="rgba(251,232,216,0.25)" strokeWidth="1.5"/>
-        <line x1="502" y1="85" x2="550" y2="85" stroke="rgba(251,232,216,0.25)" strokeWidth="1.5"/>
-      </g>
-
-      {/* Caramel throw pillow */}
-      <g transform="rotate(-9,90,80)">
-        <rect x="62" y="48" width="48" height="62" rx="11" fill="#BB885E"/>
-        <line x1="86" y1="50" x2="86" y2="108" stroke="rgba(251,232,216,0.3)" strokeWidth="1.5"/>
-        <line x1="64" y1="79" x2="108" y2="79" stroke="rgba(251,232,216,0.3)" strokeWidth="1.5"/>
-      </g>
-    </svg>
-  );
-}
 
 /* ── Coffee Table ──────────────────────────────────────── */
 function CoffeeTableSVG() {
@@ -328,11 +261,11 @@ export function LivingRoomHero() {
       </div>
 
       {/* Rug */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: "172px",
+      <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: "50px",
         width: "clamp(260px, 50%, 540px)", height: "130px", borderRadius: "10px",
         backgroundColor: P.tan, opacity: 0.72,
         boxShadow: "0 4px 20px rgba(23,58,43,0.1)" }}/>
-      <div className="absolute left-1/2 -translate-x-1/2" style={{ bottom: "176px",
+      <div className="absolute left-1/2 -translate-x-1/2" style={{ bottom: "59px",
         width: "clamp(248px, 48.5%, 528px)", height: "122px", borderRadius: "8px",
         border: `1.5px solid ${P.terra}`, opacity: 0.15, zIndex: 11 }}/>
 
@@ -376,14 +309,14 @@ export function LivingRoomHero() {
         <FloorPlantSVG />
       </div>
 
-      {/* Couch */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-25" style={{ bottom: "152px",
+      {/* Sofa */}
+      <div className="absolute left-1/2 -translate-x-1/2 z-25" style={{ bottom: "90px",
         width: "clamp(290px, 60%, 620px)" }}>
-        <CouchSVG />
+        <img src={sofaImage} alt="Sofa" style={{ width: "100%", display: "block" }}/>
       </div>
 
       {/* Coffee table */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-30" style={{ bottom: "163px",
+      <div className="absolute left-1/2 -translate-x-1/2 z-30" style={{ bottom: "115px",
         width: "clamp(150px, 22%, 210px)" }}>
         <CoffeeTableSVG />
       </div>
