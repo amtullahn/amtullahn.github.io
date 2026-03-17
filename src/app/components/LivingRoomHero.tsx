@@ -1,4 +1,9 @@
-import { User, PenLine, Code2, BookOpen, ChevronDown, ExternalLink } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
+import { TypeAnimation } from 'react-type-animation';
+import userSvg from "../assets/user.svg";
+import penlineSvg from "../assets/penline.svg";
+import projectsSvg from "../assets/projects.svg";
+import flipbookSvg from "../assets/flipbook.svg";
 
 /* ── Brand palette ─────────────────────────────────────── */
 const P = {
@@ -24,23 +29,23 @@ const scrollTo = (id: string) =>
 
 const FRAMES = [
   {
-    id: "about", label: "About Me", Icon: User,
+    id: "about", label: "About Me", icon: userSvg,
     border: P.forest, bg: P.tan, rotation: -4, dy: 6,
     onClick: () => scrollTo("about"), external: false,
   },
   {
-    id: "blog", label: "Blog", Icon: PenLine,
+    id: "blog", label: "Blog", icon: penlineSvg,
     border: P.terra, bg: "#FEF2EB", rotation: 3, dy: -7,
     onClick: () => window.open("https://substack.com/@braindumpdigest", "_blank"),
     external: true,
   },
   {
-    id: "projects", label: "Projects", Icon: Code2,
+    id: "projects", label: "Projects", icon: projectsSvg,
     border: P.sage, bg: "#EEF3F0", rotation: -2, dy: 5,
     onClick: () => scrollTo("projects"), external: false,
   },
   {
-    id: "flipbook", label: "Flipbook", Icon: BookOpen,
+    id: "flipbook", label: "Flipbook", icon: flipbookSvg,
     border: P.caramel, bg: P.peach, rotation: 4, dy: -5,
     onClick: () => scrollTo("flipbook"), external: false,
   },
@@ -48,7 +53,7 @@ const FRAMES = [
 
 /* ── Doodle Frame ──────────────────────────────────────── */
 function DoodleFrame({ frame }: { frame: (typeof FRAMES)[0] }) {
-  const { Icon, border, bg, rotation, dy, label, onClick, external, id } = frame;
+  const { icon, border, bg, rotation, dy, label, onClick, external, id } = frame;
   return (
     <div
       className="cursor-pointer group select-none flex-shrink-0"
@@ -79,7 +84,7 @@ function DoodleFrame({ frame }: { frame: (typeof FRAMES)[0] }) {
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "106px",
           display: "flex", alignItems: "center", justifyContent: "center",
           color: border, flexDirection: "column", gap: "6px" }}>
-          <Icon size={24} strokeWidth={1.5}/>
+          <img src={icon} alt={label} style={{ width: "24px", height: "24px" }}/>
           {external && <ExternalLink size={9} strokeWidth={2} style={{ opacity: 0.4 }}/>}
         </div>
       </div>
@@ -284,7 +289,7 @@ export function LivingRoomHero() {
           lineHeight: "1.15",
           marginBottom: "0.4rem",
         }}>
-          My Virtual Living Room
+            <TypeAnimation sequence={['My Virtual Living Room']} speed={20} />
         </h1>
         <p style={{ fontFamily: "Nunito, sans-serif", color: P.sage, opacity: 0.7,
           fontSize: "clamp(0.75rem, 1.6vw, 0.85rem)", letterSpacing: "0.04em" }}>
@@ -311,7 +316,7 @@ export function LivingRoomHero() {
 
       {/* Sofa */}
       <div className="absolute left-1/2 -translate-x-1/2 z-25" style={{ bottom: "90px",
-        width: "clamp(290px, 60%, 620px)" }}>
+        width: "clamp(290px, 60%, 580px)" }}>
         <img src={sofaImage} alt="Sofa" style={{ width: "100%", display: "block" }}/>
       </div>
 
