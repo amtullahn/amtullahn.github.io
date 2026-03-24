@@ -118,7 +118,7 @@ function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
 
 export function ProjectsSection() {
   return (
-    <section id="projects" style={{ backgroundColor: TAN,
+    <section id="projects" style={{ backgroundColor: "#fff",
       fontFamily: "Nunito, sans-serif",
       padding: "clamp(64px, 10vw, 112px) clamp(20px, 6vw, 80px)" }}>
 

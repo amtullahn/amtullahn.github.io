@@ -69,7 +69,7 @@ export function PhotographySection() {
     <section
       id="photography"
       style={{
-        backgroundColor: "#fff",
+        backgroundColor: TAN,
         fontFamily: "Nunito, sans-serif",
         padding: "clamp(64px, 10vw, 112px) clamp(20px, 6vw, 80px)",
       }}
@@ -193,7 +193,7 @@ export function PhotographySection() {
                     </div>
 
                     {/* Content */}
-                    <div style={{ padding: "18px" }}>
+                    {/* <div style={{ padding: "18px" }}>
                       <div
                         style={{
                           display: "flex",
@@ -246,7 +246,7 @@ export function PhotographySection() {
                       >
                         {photo.description}
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </CarouselItem>
               ))}
@@ -282,7 +282,7 @@ export function PhotographySection() {
             textAlign: "center",
           }}
         >
-          Click to expand • Use arrows to navigate • Captured with passion for light and composition
+          Click to expand • Use arrows to navigate
         </p>
 
         {/* Expanded Image Modal */}
