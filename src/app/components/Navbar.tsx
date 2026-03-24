@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Download } from "lucide-react";
 import { SOCIAL_LINKS } from "../data/socialLinks";
+import resumePdf from "../assets/resume.pdf";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,7 +60,7 @@ export function Navbar() {
 
           {/* Resume download — replace /resume.pdf with your hosted file path */}
           <a
-            href="/resume.pdf"
+            href={resumePdf}
             download="Amtullah_Naalwala_Resume.pdf"
             className="flex items-center gap-1.5 transition-all duration-200 hover:opacity-75"
             style={{

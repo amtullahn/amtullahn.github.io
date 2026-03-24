@@ -1,4 +1,5 @@
 import { Github, ExternalLink, ArrowUpRight, Download } from "lucide-react";
+import resumePdf from "../assets/resume.pdf";
 
 /* ── Palette ── */
 const FOREST  = "#173A2B";
@@ -45,29 +46,17 @@ const PROJECTS = [
 */
 const EXPERIENCE = [
   {
-    role: "Software Engineer — Front-End",
-    company: "Independent / Open Source Contributor",
-    period: "2022 — Present",
-    location: "Remote",
+    role: "Senior Software Engineer",
+    company: "Ford Motor Company",
+    period: "June 2021 — Present",
+    location: "Dearborn, MI",
     bullets: [
-      "Design and ship full-stack portfolio and systems projects using React, TypeScript, Node.js and C/C++.",
-      "Lead front-end architecture and UX delivery for personal brand site, with a focus on accessibility and responsive performance.",
-      "Maintain multiple public repositories including proxy-web-server, server-client-system, and Spell-Checker.",
-      "Collaborate with open-source and academic peers to implement best practices in code quality, testing and CI workflows.",
+      "Lead the development and modernization of Ford & Lincoln's global rewards platform, scaling active users by 78% (9M to 16M) by delivering high-impact React/TypeScript features and improving system scalability.",
+      "Led migration of front-end applications from on-prem/PCF to Google Cloud Platform, re-architecting authentication (MSAL, Azure B2C, ADFS), routing (NGINX), and CI/CD pipelines (Tekton), improving system scalability and deployment reliability.",
+      "Reduced build times by 94% (112s to 7s) and deployment times by 38% by upgrading to React 19, Webpack 5, and Node 22, significantly improving developer productivity and release velocity.",
+      "Established scalable testing framework by implementing 438 unit tests (Vitest) and evaluating Playwright for end-to-end coverage, increasing code reliability and release confidence.",
     ],
     accent: FOREST,
-  },
-  {
-    role: "Software Developer (Academic Projects)",
-    company: "University / Personal Research",
-    period: "2019 — 2022",
-    location: "Hybrid",
-    bullets: [
-      "Built C++ systems for data processing, company roster sorting, and algorithmic optimization (Alphabetizer, statistical-reports).",
-      "Executed project requirements from concept through implementation, including an animation experience prototype and interactive aquarium simulation.",
-      "Developed and tested software with strong focus on correctness, maintainability and documentation.",
-    ],
-    accent: SAGE,
   },
 ];
 
@@ -173,7 +162,7 @@ export function ProjectsSection() {
               Experience
             </h3>
             {/* Resume download — replace /resume.pdf with your hosted file */}
-            <a href="/resume.pdf" download="Amtullah_Naalwala_Resume.pdf"
+            <a href={resumePdf} download="Amtullah_Naalwala_Resume.pdf"
                className="flex items-center gap-2 transition-all duration-200 hover:opacity-70 self-start sm:self-auto"
                style={{ backgroundColor: FOREST, color: PEACH, padding: "10px 20px",
                  borderRadius: "100px", fontSize: "0.78rem", textDecoration: "none",
@@ -189,17 +178,6 @@ export function ProjectsSection() {
                      paddingBottom: idx < EXPERIENCE.length - 1 ? "40px" : "0",
                      borderBottom: idx < EXPERIENCE.length - 1 ? "1px solid rgba(23,58,43,0.08)" : "none",
                      marginBottom: idx < EXPERIENCE.length - 1 ? "40px" : "0" }}>
-                {/* Timeline dot + line */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center",
-                  flexShrink: 0, paddingTop: "4px" }}>
-                  <div style={{ width: "10px", height: "10px", borderRadius: "50%",
-                    backgroundColor: exp.accent, flexShrink: 0 }}/>
-                  {idx < EXPERIENCE.length - 1 && (
-                    <div style={{ width: "1px", flex: 1, marginTop: "6px",
-                      backgroundColor: "rgba(23,58,43,0.1)" }}/>
-                  )}
-                </div>
-
                 <div style={{ flex: 1, paddingBottom: "4px" }}>
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                     <div>

@@ -1,5 +1,7 @@
 import { MapPin, Download } from "lucide-react";
 import { SOCIAL_LINKS } from "../data/socialLinks";
+import resumePdf from "../assets/resume.pdf";
+import meImage from "../assets/me.png";
 
 /* ── Palette ── */
 const FOREST = "#173A2B";
@@ -16,7 +18,7 @@ const SKILLS = [
   { category: "Currently Exploring", items: ["WebGL", "Accessibility (WCAG)", "Design Systems"] },
 ];
 
-import meImage from "../assets/me.png";
+
 
 
 export function AboutSection() {
@@ -92,7 +94,7 @@ export function AboutSection() {
 
             {/* Resume download */}
             {/* Replace /resume.pdf with the path to your hosted resume */}
-            <a href="/resume.pdf" download="Amtullah_Naalwala_Resume.pdf"
+            <a href={resumePdf} download="Amtullah_Naalwala_Resume.pdf"
                className="flex items-center justify-center gap-2 transition-all duration-200 hover:opacity-75"
                style={{ backgroundColor: FOREST, color: PEACH, padding: "13px 24px",
                  borderRadius: "10px", fontSize: "0.84rem", textDecoration: "none",
@@ -111,22 +113,15 @@ export function AboutSection() {
                 Hi, I'm Amtullah
               </h4>
               <div style={{ color: "#3D5248", fontSize: "0.92rem", lineHeight: "1.85" }}>
-                {/*
-                  TODO: Update this bio with your actual intro from LinkedIn or preferred copy.
-                  Below is a placeholder based on your profile.
-                */}
                 <p style={{ marginBottom: "14px" }}>
                  I’m a software engineer who enjoys building thoughtful, well-designed digital experiences, mostly with React and TypeScript.
                 </p>
                 <p style={{ marginBottom: "14px" }}>
                   I’m especially drawn to problems that sit at the intersection of technology and people. That shows up in my work building customer-facing platforms, improving developer workflows, and mentoring newer engineers. I’m happiest when I’m learning something new and helping someone else do the same.
-
                 </p>
-                <p style={{ marginBottom: "14px" }}>Outside of work, I’m usually following my curiosity! I like compiling travel videos from new places I’m exploring, hosting gatherings for friends, or turning random ideas into content and side projects (some of which end up in my quarterly updates here). When I’m not building something, I’m probably reading a good book, listening to a podcast, or curating a playlist for whatever mood or life situationI happen to be in!</p>
-                <p style={{ marginBottom: "14px" }}>Lately I’ve been especially curious about startups, internet storytelling, and building things that are both useful and a little delightful.</p>
-                <p>
-If you’re here to collaborate, talk tech, swap book/podcast recs, or just see what I’m up to, welcome!
-</p>
+                <p style={{ marginBottom: "14px" }}>When I’m not coding, I’m probably deep in a creative rabbit hole! I like making travel videos, turning ideas into side projects, reading, and exploring new places.</p>
+               
+                <p>If you’re here to collaborate, talk tech, swap book/podcast recs, or just see what I’m up to, welcome!</p>
               </div>
             </div>
 
