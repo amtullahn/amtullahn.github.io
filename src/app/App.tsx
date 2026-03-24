@@ -16,9 +16,9 @@ export default function App() {
         <LivingRoomHero />
         <AboutSection />
         <ProjectsSection />
-        <PhotographySection />
+        {/* <PhotographySection />
         <BlogSection />
-        <FlipbookSection />
+        <FlipbookSection /> */}
       </main>
       <Footer />
     </div>
