@@ -33,22 +33,22 @@ const FRAMES = [
     border: P.forest, bg: P.tan, rotation: -4, dy: 6,
     onClick: () => scrollTo("about"), external: false,
   },
-  {
-    id: "blog", label: "Blog", icon: penlineSvg,
-    border: P.terra, bg: "#FEF2EB", rotation: 3, dy: -7,
-    onClick: () => window.open("https://substack.com/@braindumpdigest", "_blank"),
-    external: true,
-  },
+  // {
+  //   id: "blog", label: "Blog", icon: penlineSvg,
+  //   border: P.terra, bg: "#FEF2EB", rotation: 3, dy: -7,
+  //   onClick: () => window.open("https://substack.com/@braindumpdigest", "_blank"),
+  //   external: true,
+  // },
   {
     id: "projects", label: "Projects", icon: projectsSvg,
     border: P.sage, bg: "#EEF3F0", rotation: -2, dy: 5,
     onClick: () => scrollTo("projects"), external: false,
   },
-  {
-    id: "flipbook", label: "Flipbook", icon: flipbookSvg,
-    border: P.caramel, bg: P.peach, rotation: 4, dy: -5,
-    onClick: () => scrollTo("flipbook"), external: false,
-  },
+  // {
+  //   id: "flipbook", label: "Flipbook", icon: flipbookSvg,
+  //   border: P.caramel, bg: P.peach, rotation: 4, dy: -5,
+  //   onClick: () => scrollTo("flipbook"), external: false,
+  // },
 ];
 
 /* ── Doodle Frame ──────────────────────────────────────── */
@@ -84,7 +84,7 @@ function DoodleFrame({ frame }: { frame: (typeof FRAMES)[0] }) {
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "106px",
           display: "flex", alignItems: "center", justifyContent: "center",
           color: border, flexDirection: "column", gap: "6px" }}>
-          <img src={icon} alt={label} style={{ width: "24px", height: "24px" }}/>
+          <img src={icon} alt={label} style={{ width: "45px", height: "45px" }}/>
           {external && <ExternalLink size={9} strokeWidth={2} style={{ opacity: 0.4 }}/>}
         </div>
       </div>
