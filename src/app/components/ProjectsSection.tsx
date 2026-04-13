@@ -44,21 +44,21 @@ const PROJECTS = [
   Experience is pre-filled based on your LinkedIn profile (linkedin.com/in/amtullahnaalwala).
   Please update company names, dates, and bullet points with your exact details.
 */
-const EXPERIENCE = [
-  {
-    role: "Senior Software Engineer",
-    company: "Ford Motor Company",
-    period: "June 2021 — Present",
-    location: "Dearborn, MI",
-    bullets: [
-      "Lead the development and modernization of Ford & Lincoln's global rewards platform, scaling active users by 78% (9M to 16M) by delivering high-impact React/TypeScript features and improving system scalability.",
-      "Led migration of front-end applications from on-prem/PCF to Google Cloud Platform, re-architecting authentication (MSAL, Azure B2C, ADFS), routing (NGINX), and CI/CD pipelines (Tekton), improving system scalability and deployment reliability.",
-      "Reduced build times by 94% (112s to 7s) and deployment times by 38% by upgrading to React 19, Webpack 5, and Node 22, significantly improving developer productivity and release velocity.",
-      "Established scalable testing framework by implementing 438 unit tests (Vitest) and evaluating Playwright for end-to-end coverage, increasing code reliability and release confidence.",
-    ],
-    accent: FOREST,
-  },
-];
+// const EXPERIENCE = [
+//   {
+//     role: "Senior Software Engineer",
+//     company: "Ford Motor Company",
+//     period: "June 2021 — Present",
+//     location: "Dearborn, MI",
+//     bullets: [
+//       "Lead the development and modernization of Ford & Lincoln's global rewards platform, scaling active users by 78% (9M to 16M) by delivering high-impact React/TypeScript features and improving system scalability.",
+//       "Led migration of front-end applications from on-prem/PCF to Google Cloud Platform, re-architecting authentication (MSAL, Azure B2C, ADFS), routing (NGINX), and CI/CD pipelines (Tekton), improving system scalability and deployment reliability.",
+//       "Reduced build times by 94% (112s to 7s) and deployment times by 38% by upgrading to React 19, Webpack 5, and Node 22, significantly improving developer productivity and release velocity.",
+//       "Established scalable testing framework by implementing 438 unit tests (Vitest) and evaluating Playwright for end-to-end coverage, increasing code reliability and release confidence.",
+//     ],
+//     accent: FOREST,
+//   },
+// ];
 
 function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
   return (
@@ -155,23 +155,23 @@ export function ProjectsSection() {
         </div>
 
         {/* Experience */}
-        <div style={{ borderTop: `2px solid rgba(23,58,43,0.08)`, paddingTop: "clamp(40px, 6vw, 64px)" }}>
+        {/* <div style={{ borderTop: `2px solid rgba(23,58,43,0.08)`, paddingTop: "clamp(40px, 6vw, 64px)" }}>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
             <h3 style={{ fontFamily: "'Fraunces', serif", color: FOREST,
               fontSize: "clamp(1.4rem, 3vw, 1.9rem)", fontStyle: "italic" }}>
               Experience
-            </h3>
+            </h3> */}
             {/* Resume download — replace /resume.pdf with your hosted file */}
-            <a href={resumePdf} download="Amtullah_Naalwala_Resume.pdf"
+            {/* <a href={resumePdf} download="Amtullah_Naalwala_Resume.pdf"
                className="flex items-center gap-2 transition-all duration-200 hover:opacity-70 self-start sm:self-auto"
                style={{ backgroundColor: FOREST, color: PEACH, padding: "10px 20px",
                  borderRadius: "100px", fontSize: "0.78rem", textDecoration: "none",
                  fontWeight: "700", letterSpacing: "0.03em", flexShrink: 0 }}>
               <Download size={13} strokeWidth={2.5}/> Download Resume
             </a>
-          </div>
+          </div> */}
 
-          <div className="flex flex-col gap-0">
+          {/* <div className="flex flex-col gap-0">
             {EXPERIENCE.map((exp, idx) => (
               <div key={exp.role}
                    style={{ display: "flex", gap: "24px",
@@ -216,8 +216,8 @@ export function ProjectsSection() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </section>
   );

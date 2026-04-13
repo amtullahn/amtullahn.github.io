@@ -1,12 +1,4 @@
-import { useState, useEffect } from "react";
-import { Camera, ArrowLeft, ArrowRight } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "./ui/carousel";
+import { useState } from "react";
 import { PhotoModal } from "./PhotoModal";
 
 /* ── Palette ── */
@@ -118,171 +110,113 @@ export function PhotographySection() {
           A curated collection capturing moments through light, composition, and perspective.
         </p>
 
-        {/* Carousel */}
-        <div style={{ position: "relative", paddingLeft: "80px", paddingRight: "80px" }}>
-          <Carousel
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-          >
-            <CarouselContent>
-              {PHOTOGRAPHY.map((photo) => (
-                <CarouselItem key={photo.id} className="basis-full sm:basis-1/2 lg:basis-1/3">
-                  <div
-                    onMouseEnter={() => setHoveredId(photo.id)}
-                    onMouseLeave={() => setHoveredId(null)}
+        {/* Polaroid Gallery Wall */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "32px 24px",
+            rowGap: "40px",
+          }}
+        >
+          {PHOTOGRAPHY.map((photo, idx) => (
+            <div
+              key={photo.id}
+              onMouseEnter={() => setHoveredId(photo.id)}
+              onMouseLeave={() => setHoveredId(null)}
+              onClick={() => setExpandedId(photo.id)}
+              style={{
+                position: "relative",
+                cursor: "pointer",
+                transition: "transform 0.3s ease",
+                transform:
+                  hoveredId === photo.id
+                    ? "translateY(-8px) rotate(0deg)"
+                    : `rotate(${[-2, -1, 1, 2, -1.5][idx % 5]}deg)`,
+              }}
+            >
+              {/* Polaroid Frame */}
+              <div
+                style={{
+                  backgroundColor: "#fff",
+                  padding: "12px",
+                  paddingBottom: "48px",
+                  borderRadius: "2px",
+                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
+                  transition: "box-shadow 0.3s ease",
+                  boxShadow: hoveredId === photo.id
+                    ? "0 12px 28px rgba(0, 0, 0, 0.25)"
+                    : "0 8px 20px rgba(0, 0, 0, 0.15)",
+                }}
+              >
+                {/* Photo Container */}
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    paddingBottom: "100%",
+                    overflow: "hidden",
+                    backgroundColor: "#f5f5f5",
+                  }}
+                >
+                  <img
+                    src={photo.image}
+                    alt={photo.title}
                     style={{
-                      position: "relative",
-                      borderRadius: "14px",
-                      overflow: "hidden",
-                      backgroundColor: PEACH,
-                      border: `2px solid ${photo.accentColor}40`,
-                      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                      transform:
-                        hoveredId === photo.id ? "translateY(-8px)" : "translateY(0)",
-                      boxShadow:
-                        hoveredId === photo.id
-                          ? `0 12px 32px ${photo.accentColor}20`
-                          : "0 4px 12px rgba(23,58,43,0.08)",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      transition: "transform 0.4s ease",
+                      transform: hoveredId === photo.id ? "scale(1.05)" : "scale(1)",
+                    }}
+                  />
+                </div>
+
+                {/* Polaroid Label */}
+                <div style={{ padding: "12px 0 0 0" }}>
+                  <h3
+                    style={{
+                      fontFamily: "'Fraunces', serif",
+                      color: FOREST,
+                      fontSize: "0.95rem",
+                      fontWeight: "600",
+                      margin: "0 0 4px 0",
+                      opacity: hoveredId === photo.id ? 1 : 0.8,
+                      transition: "opacity 0.3s ease",
                     }}
                   >
-                    {/* Image */}
-                    <div
-                      onClick={() => setExpandedId(photo.id)}
-                      style={{
-                        width: "100%",
-                        paddingBottom: "75%",
-                        position: "relative",
-                        overflow: "hidden",
-                        backgroundColor: "#f5f5f5",
-                        cursor: "pointer",
-                      }}
-                    >
-                      <img
-                        src={photo.image}
-                        alt={photo.title}
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          transition: "transform 0.4s ease",
-                          transform: hoveredId === photo.id ? "scale(1.05)" : "scale(1)",
-                        }}
-                      />
-
-                      {/* Overlay */}
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          backgroundColor: `${FOREST}00`,
-                          transition: "background-color 0.3s ease",
-                          background:
-                            hoveredId === photo.id
-                              ? `linear-gradient(180deg, transparent, ${FOREST}40)`
-                              : "transparent",
-                        }}
-                      />
-                    </div>
-
-                    {/* Content */}
-                    {/* <div style={{ padding: "18px" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          marginBottom: "8px",
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontSize: "0.67rem",
-                            color: photo.accentColor,
-                            backgroundColor: `${photo.accentColor}15`,
-                            padding: "3px 10px",
-                            borderRadius: "100px",
-                            fontWeight: "700",
-                            letterSpacing: "0.06em",
-                            textTransform: "uppercase",
-                          }}
-                        >
-                          {photo.category}
-                        </span>
-                        <Camera
-                          size={14}
-                          strokeWidth={2}
-                          style={{ color: photo.accentColor, opacity: 0.6 }}
-                        />
-                      </div>
-
-                      <h3
-                        style={{
-                          fontFamily: "'Fraunces', serif",
-                          color: FOREST,
-                          fontSize: "1rem",
-                          fontWeight: "600",
-                          marginBottom: "4px",
-                          lineHeight: "1.3",
-                        }}
-                      >
-                        {photo.title}
-                      </h3>
-
-                      <p
-                        style={{
-                          color: FOREST,
-                          opacity: 0.55,
-                          fontSize: "0.8rem",
-                          lineHeight: "1.5",
-                        }}
-                      >
-                        {photo.description}
-                      </p>
-                    </div> */}
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            {/* Navigation Buttons */}
-            <CarouselPrevious
-              className="bg-forest text-peach hover:bg-sage"
-              style={{
-                backgroundColor: FOREST,
-                color: PEACH,
-                border: "none",
-              }}
-            />
-            <CarouselNext
-              className="bg-forest text-peach hover:bg-sage"
-              style={{
-                backgroundColor: FOREST,
-                color: PEACH,
-                border: "none",
-              }}
-            />
-          </Carousel>
+                    {photo.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: FOREST,
+                      fontSize: "0.75rem",
+                      margin: "0",
+                      opacity: 0.5,
+                    }}
+                  >
+                    {photo.category}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Info text */}
         <p
           style={{
-            marginTop: "clamp(40px, 6vw, 64px)",
+            marginTop: "48px",
             color: FOREST,
             opacity: 0.4,
             fontSize: "0.82rem",
             textAlign: "center",
           }}
         >
-          Click to expand • Use arrows to navigate
+          Click any polaroid to expand and view details
         </p>
 
         {/* Expanded Image Modal */}
